@@ -13,16 +13,6 @@
 <body>
 <h1>Testing JSP</h1>
 <P>
-    <%@page import="java.util.Date, main.TestClass" %>
-
-    <%=
-    new Date()
-    %>
-    <%=
-    new TestClass().getInfo()
-
-    %>
-
 </P>
 </body>
 </html>
