@@ -5,13 +5,22 @@
                       http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0"
          metadata-complete="true">
-<servlet>
-    <servlet-name>FrontController</servlet-name>
-    <servlet-class>by.grudnitsky.java.controller.FrontController</servlet-class>
-</servlet>
+    <servlet>
+        <servlet-name>FrontController</servlet-name>
+        <servlet-class>by.grudnitsky.java.controller.FrontController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FrontController</servlet-name>
         <url-pattern>/do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HomePage</servlet-name>
+        <servlet-class>by.grudnitsky.java.controller.HomePage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomePage</servlet-name>
+        <url-pattern>/</url-pattern>
     </servlet-mapping>
 
 </web-app>

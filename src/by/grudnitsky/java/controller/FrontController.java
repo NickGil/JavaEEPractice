@@ -28,19 +28,19 @@ public class FrontController extends HttpServlet {
         }
     }
 
-    private void toJsp(HttpServletRequest req, HttpServletResponse resp, String jsp) throws ServletException, IOException {
+    void toJsp(HttpServletRequest req, HttpServletResponse resp, String jsp) throws ServletException, IOException {
         ServletContext servletContext = req.getServletContext();
         RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(jsp);
         requestDispatcher.forward(req, resp);
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         process(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         process(req, resp);
     }
 }
