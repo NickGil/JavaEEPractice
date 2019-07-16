@@ -1,11 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
   User: Nikita
-  Date: 2019-07-15
-  Time: 17:30
+  Date: 2019-07-16
+  Time: 15:06
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>LizaProject</title>
@@ -24,6 +25,13 @@
             crossorigin="anonymous"></script>-->
 </head>
 <body>
-Page not found
+
+<c:forEach items="${complaints}" var="complaints">
+    <br>
+    <div class="row">
+        <div class="col-md-1">${complaints.complaint} </div>
+    </div>
+</c:forEach>
+
 </body>
 </html>

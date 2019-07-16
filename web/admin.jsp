@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: Nikita
   Date: 2019-07-15
-  Time: 17:30
+  Time: 15:57
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8"%>
@@ -24,6 +24,8 @@
             crossorigin="anonymous"></script>-->
 </head>
 <body>
-Page not found
+<a class="btn btn-primary" href="do?command=reset" role="button">Reset</a>
+<a class="btn btn-primary" href="do?command=showComplaints" role="button">Show Complaint</a>
+
 </body>
 </html>

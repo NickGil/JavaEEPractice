@@ -7,17 +7,36 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class FrontController extends HttpServlet {
-    private void process(HttpServletRequest req, HttpServletResponse resp) {
+    private void process(HttpServletRequest req, HttpServletResponse resp) throws SQLException {
         String command = req.getParameter("command");
         if (command != null && !command.isEmpty()) {
             if (command.equals("mainPage")) {
-                new CommandMain().execute(req, resp);
+                new CmndMain().execute(req, resp);
                 try {
                     toJsp(req, resp, "/mainPage.jsp");
                 } catch (ServletException | IOException e) {
                     e.printStackTrace();
+                }
+            } else {
+                if (command.equals("reset")){
+                    new CmndReset().execute(req, resp);
+                    try {
+                        toJsp(req, resp, "/admin.jsp");
+                    } catch (ServletException | IOException e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    if (command.equals("showComplaints")){
+                        new CmndShowComplaints().execute(req,resp);
+                        try {
+                            toJsp(req,resp,"/complaints.jsp");
+                        } catch (ServletException | IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
             }
         }
@@ -36,11 +55,19 @@ public class FrontController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        process(req, resp);
+        try {
+            process(req, resp);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
-        process(req, resp);
+        try {
+            process(req, resp);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
