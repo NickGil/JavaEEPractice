@@ -19,7 +19,7 @@ public class Dao {
     }
 
     public static Dao getDao() {
-        if (dao == null){
+        if (dao == null) {
             synchronized (Dao.class) {
                 if (dao == null) {
                     dao = new Dao();

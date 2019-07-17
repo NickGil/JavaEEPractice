@@ -22,7 +22,7 @@ public class UniversalDAO<Type> implements InterfaceDao<Type> {
     }
 
     @Override
-    public boolean create(Type bean) throws SQLException {
+    public void create(Type bean) throws SQLException {
         StringBuilder dbsField = new StringBuilder();
         StringBuilder values = new StringBuilder();
         String delimeter = "";
@@ -53,7 +53,6 @@ public class UniversalDAO<Type> implements InterfaceDao<Type> {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-        return (id > 0);
     }
 
     @Override

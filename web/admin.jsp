@@ -25,7 +25,7 @@
 </head>
 <body>
 <a class="btn btn-primary" href="do?command=reset" role="button">Reset</a>
-<a class="btn btn-primary" href="do?command=showComplaints" role="button">Show Complaint</a>
+<a class="btn btn-primary" href="do?command=complaints" role="button">Show Complaint</a>
 
 </body>
 </html>
